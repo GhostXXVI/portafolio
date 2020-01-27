@@ -1,0 +1,25 @@
+{
+    "short_name": "Portafolio",
+    "name": "Sergio Portafolio",
+    "icons": [
+      {
+        "src": "assets/img/icon_android.png",
+        "type": "image/png",
+        "sizes": "57x57"
+      },
+      {
+        "src": "assets/img/icon_android.png",
+        "type": "image/png",
+        "sizes": "114x114"
+      },
+      {
+        "src": "assets/img/icono_manifest.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }
+    ],
+    "background_color": "#fec902",
+    "theme_color":"#e4b300",
+    "display": "minimal-ui",
+    "start_url": "https://sergiocubas.github.io/portafolio/?launcher=true"
+  }
