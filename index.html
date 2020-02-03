@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#fabe00" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/icon_android.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/icono_celular.png"/>   
-    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FFBA00" /> 
+    <meta name="description" content="Portafolio personal - Sergio Cubas Bernal" />
+    <meta property="og:title" content="Noocturno" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sergiocubas.github.io/test/" />
+    <meta property="og:image" content="https://sergiocubas.github.io/test/assets/img/logo.jpg" />
+    <meta property="og:description" content="Portafolio personal" />
+
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/img/icons/noocturno.png">
+    <link rel="apple-touch-icon" href="assets/img/icons/noocturno.png">
+    <link rel="apple-touch-startup-image" href="assets/img/icons/noocturno.png">
+    <link rel="manifest" href="./manifest.json">
+    
     
     <title>Portafolio</title>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/library/owl2/css/owl.carousel.min.css">
     <script src="https://kit.fontawesome.com/85bf147151.js"></script>
     <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
@@ -22,8 +37,6 @@
 </head>
 <body>
 <main class="container">
-  
-
     <div class="container-navegation">
       <div class="mode-night">
         <a class="mode-night__btn" href="#"><div class="dotted"></div></a>  
@@ -58,6 +71,7 @@
         <nav id="overlay" class="container-navegation__menu">
             <button id="toggle" class="toogle-btn">
                 <img id="rotate" src="assets/img/toggle.svg">
+                <p class="rotate-text">Abrir menu</p>
             </button>
             <ul class="container-navegation__menu-items">
                 <li id="home" class="item active-page">
@@ -68,7 +82,7 @@
                     Inicio</a>
                 </li>
                 
-                <li  class="item">
+                <li id="aboutMe" class="item">
                   <a class="pagina-sobremi">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     ¿Quien soy?
@@ -84,7 +98,7 @@
                 <li id="news" class="item">
                 <a class="pagina-noticias">
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tv"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
-                  Noticias
+                  Blog
                 </a> 
                 </li>
 
@@ -107,7 +121,7 @@
         </footer>
     </div>
 
-    <div class="container-page">
+    <div class="container-page container-page--home">
       <div class="container-page__banner">
         <img src="assets/img/img.jpg" alt="">
       </div>
@@ -237,8 +251,7 @@
                 <p class="txt-primary txt-primary--black">Frontend</p>
                 <img src="assets/img/flujo-frontend.svg" alt="">
             </div>
-            <div class="efecto1"></div>
-            <div class="efecto2"></div>
+            <div class="efecto"></div>
         </div>
 
         <div class="container-page__workFlow-presentation">
@@ -247,28 +260,364 @@
       </div>
     </div>
 
-    <div class="container-groupNews">
-      <p class="txt-primary txt-primary--greyD">Noticias</p>
-      <div class="container-groupNews__news" 
-      style="background-image: url('assets/img/img.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      ">
+    <div class="container-page container-page--portfolio">
+      <div class="portfolio__container">
+        <div class="row">
+          <div class="col-lg-12">
+          <div class="portfolioFilter clearfix">
+            <a href="#" data-filter="*" class="current">All Categories</a>
+            <a href="#" data-filter=".webTemplates">Web Templates</a>
+            <a href="#" data-filter=".logos">Logos</a>
+            <a href="#" data-filter=".drawings">Drawings</a>
+            <a href="#" data-filter=".ui">UI Elements</a>
+          </div>
+            </div>
+          <div class="portfolioContainer">
+      
+            <div class="portfolio-item webTemplates objects">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/cc99b535336825.Y3JvcCwxMzk1LDEwOTEsMCw3ODA.png" alt="image">
+            </div>
+      
+            <div class="portfolio-item drawings places">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/d4cfa934191261.Y3JvcCw2MTMsNDc5LDQsMjA0.jpg" alt="image">
+            </div>
+      
+            <div class="portfolio-item webTemplates food">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/11893193.5482088f6f391.png" alt="image">
+            </div>
+      
+            <div class="portfolio-item logos drawings">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/be4b9728308865.55b92edb950fc.jpg" alt="image">
+            </div>
+      
+            <div class="portfolio-item webTemplates">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/12963199.548365055868a.png" alt="image">
+            </div>
+      
+            <div class="portfolio-item ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/20342607.5434c04b49254.png" alt="image">
+            </div>
+      
+            <div class="portfolio-item drawings">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/b11bbb26474383.555f91fd42584.jpg" alt="image">
+            </div>
+      
+            <div class="portfolio-item webTemplates">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/14385875.548573dae7a09.jpg" alt="image">
+            </div>
+      
+            <div class="portfolio-item drawings">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/14569777.5485b3876a1b9.png" alt="image">
+            </div>
+            <div class="portfolio-item logos">
+              <img src=" https://mir-s3-cdn-cf.behance.net/projects/202/1d854a24500155.5505cccd057a4.jpg" alt="image">
+            </div>
+            <div class="portfolio-item ui">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/f9b95b26406487.555cc1fded76f.jpg" alt="image">
+            </div>
+            
+            <div class="portfolio-item logos">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/181a7b35469661.Y3JvcCw3NjUsNTk5LDY3LDA.png" alt="image">
+            </div>
+            
+           
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="container-groupNews__news-details">
-        <p class="txt-primary">Noticia 1</p>
-        <p class="txt-secondary__description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        </p>
-        <p class="txt-secondary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          03/12/19
+    <div class="container-page container-page--aboutMe">
+      <div class="container-page--aboutMe__presentation">
+        <p class="txt-primary txt-primary--yellow">Presentación</p>
+        <p class="txt-description--xl">Hola, soy estudiante de la carrera de Ingeniería de Sistemas, en la actualidad curso el 6to ciclo
+           pero estoy en constante crecimiento profesional.<br><br>
 
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          19:15
+          En paralelo me encuentro estudiando en otro centro como es la Universidad Nacional de Ingeniería 
+          y de manera online en las plataformas (Platzi - Crehana - EDteam) para así poder incrementar 
+          conocimiento; siempre he buscado oportunidades y distintos desafíos que sean significativos para mí, 
+          nunca he dejado de comprometer mi pasión por aprender y resolver problemas mientras desarrollo un proyecto.
         </p>
       </div>
+
+      <div class="container-page__workFlow-presentation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+        <img class="img-coffeMachine" src="assets/img/maquina-cafe.png" alt="">
+      </div>
+
+      <div class="container-page--aboutMe__jobs">
+        
+
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <div class="container-page--aboutMe__jobs-job">
+              <div class="container-page--aboutMe__jobs-job__header">
+                <div class="job_header-logo">
+                  <img src="assets/img/logo.svg" alt="">
+                </div>
+                <div class="job_header-count">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  <p>03</p> 
+                </div>
+                  
+              </div>
+              <div class="container-page--aboutMe__jobs-job__body">
+                <p class="txt-primary txt-primary--red">In Vitro - Agencia Digital</p>
+                <small>Desarrollador Frontend</small>
+                <ul>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                </ul>
+              </div>
+              <div class="container-page--aboutMe__jobs-job__footer">
+                <div class="container-page__workFlow-card">
+                    <div class="flujo">
+                        <p class="txt-primary txt-primary--red">Frontend</p>
+                        <img src="assets/img/flujo-frontend.svg" alt="">
+                    </div>
+                    <div class="efecto"></div>
+                </div>
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 
+                  31 Diciembre 2020 - 32 Diciembre 2020
+                </p>
+              </div>
+    
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="container-page--aboutMe__jobs-job">
+              <div class="container-page--aboutMe__jobs-job__header">
+                <div class="job_header-logo">
+                  <img src="assets/img/logo.svg" alt="">
+                </div>
+                <div class="job_header-count">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  <p>03</p> 
+                </div>
+                  
+              </div>
+              <div class="container-page--aboutMe__jobs-job__body">
+                <p class="txt-primary txt-primary--red">In Vitro - Agencia Digital</p>
+                <small>Desarrollador Frontend</small>
+                <ul>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                </ul>
+              </div>
+              <div class="container-page--aboutMe__jobs-job__footer">
+                <div class="container-page__workFlow-card">
+                    <div class="flujo">
+                        <p class="txt-primary txt-primary--red">Frontend</p>
+                        <img src="assets/img/flujo-frontend.svg" alt="">
+                    </div>
+                    <div class="efecto"></div>
+                </div>
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 
+                  31 Diciembre 2020 - 32 Diciembre 2020
+                </p>
+              </div>
+    
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="container-page--aboutMe__jobs-job">
+              <div class="container-page--aboutMe__jobs-job__header">
+                <div class="job_header-logo">
+                  <img src="assets/img/logo.svg" alt="">
+                </div>
+                <div class="job_header-count">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  <p>03</p> 
+                </div>
+                  
+              </div>
+              <div class="container-page--aboutMe__jobs-job__body">
+                <p class="txt-primary txt-primary--red">In Vitro - Agencia Digital</p>
+                <small>Desarrollador Frontend</small>
+                <ul>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                  <li>• Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem</li>
+                </ul>
+              </div>
+              <div class="container-page--aboutMe__jobs-job__footer">
+                <div class="container-page__workFlow-card">
+                    <div class="flujo">
+                        <p class="txt-primary txt-primary--red">Frontend</p>
+                        <img src="assets/img/flujo-frontend.svg" alt="">
+                    </div>
+                    <div class="efecto"></div>
+                </div>
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 
+                  31 Diciembre 2020 - 32 Diciembre 2020
+                </p>
+              </div>
+    
+            </div>
+          </div>
+
+
+
+
+      </div>
+
+      </div>
+
+      <div class="container-page--aboutMe__skills">
+        <p class="txt-primary txt-primary--yellow">Habilidades</p>
+        <div class="container-page--aboutMe__skills-group">
+          <div class="container-page--aboutMe__skills-group__skill">
+            <img src="assets/img/skills/css3.svg" alt="">
+            <p class="txt-primary txt-primary--skill">Personaliza</p> 
+          </div>
+          <div class="container-page--aboutMe__skills-group__skill">
+            <img src="assets/img/skills/git.svg" alt="">
+            <p class="txt-primary txt-primary--skill">Personaliza</p> 
+          </div>
+          <div class="container-page--aboutMe__skills-group__skill">
+            <img src="assets/img/skills/gulp.svg" alt="">
+            <p class="txt-primary txt-primary--skill">Personaliza</p> 
+          </div>
+          <div class="container-page--aboutMe__skills-group__skill">
+            <img src="assets/img/skills/html5.svg" alt="">
+            <p class="txt-primary txt-primary--skill">Personaliza</p> 
+          </div>
+          <div class="container-page--aboutMe__skills-group__skill">
+            <img src="assets/img/skills/js.svg" alt="">
+            <p class="txt-primary txt-primary--skill">Personaliza</p> 
+          </div>
+          <div class="container-page--aboutMe__skills-group__skill">
+            <img src="assets/img/skills/sass.svg" alt="">
+            <p class="txt-primary txt-primary--skill">Personaliza</p> 
+          </div>
+          <div class="container-page--aboutMe__skills-group__skill">
+            <img src="assets/img/skills/webpack.svg" alt="">
+            <p class="txt-primary txt-primary--skill">Personaliza</p> 
+          </div>
+        
+        </div>       
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="container-investigation">
+      <p class="txt-primary txt-primary--greyD">Blog</p>
+      
+      <div class="container-investigation__groupNews">
+
+        <div class="container-investigation__groupNews-news" 
+        style="background-image: url('assets/img/img.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        ">
+
+          <div class="container-investigation__groupNews-news__details">
+            <p class="txt-primary">Noticia 1</p>
+            <p class="txt-secondary__description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="txt-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              03/12/19
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              19:15
+            </p>
+          </div>
+        </div>
+
+
+        <div class="container-investigation__groupNews-news" 
+        style="background-image: url('assets/img/img.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        ">
+
+          <div class="container-investigation__groupNews-news__details">
+            <p class="txt-primary">Noticia 1</p>
+            <p class="txt-secondary__description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="txt-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              03/12/19
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              19:15
+            </p>
+          </div>
+        </div>
+
+
+        <div class="container-investigation__groupNews-news" 
+        style="background-image: url('assets/img/img.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        ">
+
+          <div class="container-investigation__groupNews-news__details">
+            <p class="txt-primary">Noticia 1</p>
+            <p class="txt-secondary__description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="txt-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              03/12/19
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              19:15
+            </p>
+          </div>
+        </div>
+
+        <div class="container-investigation__groupNews-news" 
+        style="background-image: url('assets/img/img.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        ">
+
+          <div class="container-investigation__groupNews-news__details">
+            <p class="txt-primary">Noticia 1</p>
+            <p class="txt-secondary__description">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="txt-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              03/12/19
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              19:15
+            </p>
+          </div>
+        </div>
+
+
+
+        
 
       </div>
     </div>
@@ -321,153 +670,46 @@
         </button>
     </div>
     
-  </div>
+</div>
     
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="assets/library/owl2/js/owl.carousel.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
-<script>
-var swiper = new Swiper('.blog-slider', {
-      spaceBetween: 30,
-      effect: 'fade',
-      loop: true,
-      mousewheel: {
-        invert: false,
-      },
-      // autoHeight: true,
-      pagination: {
-        el: '.blog-slider__pagination',
-        clickable: true,
-      }
-    });
-  </script>
+<script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
 
 
 <script>
-    
-const body = document.querySelector("body");
-const modal = document.querySelector(".modal");
-const modalButton = document.querySelector(".modal-button");
-const closeButton = document.querySelector(".close-button");
-const scrollDown = document.querySelector(".scroll-down");
-let isOpened = false;
-
-const openModal = () => {
-  modal.classList.add("is-open");
-  body.style.overflow = "hidden";
-  $('.modal').css({'z-index':'9'});
-};
-
-const closeModal = () => {
-  modal.classList.remove("is-open");
-  body.style.overflow = "initial";
-  $('.modal').css({'z-index':'-1'});
-};
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > window.innerHeight / 3 && !isOpened) {
-    isOpened = true;
-    scrollDown.style.display = "none";
-    openModal();
-  }
-});
-
-modalButton.addEventListener("click", openModal);
-closeButton.addEventListener("click", closeModal);
-
-document.onkeydown = evt => {
-  evt = evt || window.event;
-  evt.keyCode === 27 ? closeModal() : false;
-};
-
-
-
-
-/*Menu*/
-$('#toggle').click(function() {
-   $("#rotate").toggleClass('active');
-   $('#overlay').toggleClass('open');
-});
-
-
-/*Menu active */
-
-$( document ).ready(function() {  
-    BindClickEvent();
-});
-function BindClickEvent(){
-    var selector = '.container-navegation__menu-items .item';
-    //Removes click event of each li
-    $(selector ).unbind('click');
-    //Add click event
-    $(selector ).bind('click', function(){
-        $(selector).removeClass('active-page');
-        $(this).addClass('active-page');
-
-        if ( $(this).is("#home") ) {
-          $('.container-page').css({"transform":"translateY(-100%)", "opacity":"1"});
-          $('.container-groupNews').css({"transform":"translateY(0%)", "opacity":"0"});
-          $('.icono-menu').css({"transform":"translateY(0px)"});
+$(window).load(function(){
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
         }
-
-        else if($(this).is("#portfolio")){
-          $('.icono-menu').css({"transform":"translateY(50px)"});
-        }
-
-        else if($(this).is("#news")){
-          $('.container-page').css({"transform":"translateY(0%)", "opacity":"0"});
-          $('.container-groupNews').css({"transform":"translateY(-199%)", "opacity":"1"});
-          $('.icono-menu').css({"transform":"translateY(75px)"});
-        }
-        else if($(this).is("#sobre_mi")){
-
-        }
-        
-        
     });
-}
-
-
-
-
-
-
-
-
-
-
-
-/*Modo nocturno*/
-$('.mode-night').click(function() {
-   $(".dotted").toggleClass('night-active');
+ 
+    $('.portfolioFilter a').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
 });
-
-$(document).ready(function(){
-  if($(".modal-container__btn-access").children('.btn-keyboard').length%2 == 0){
-  
-  }
-
-var cantidadNumeros = 10;
-var myArray = []
-while(myArray.length < cantidadNumeros ){
-  var numeroAleatorio = Math.ceil(Math.random()*cantidadNumeros);
-  var existe = false;
-  for(var i=-1;i<=myArray.length;i++){
-  $(".item-"+i).text(myArray[i]);
-
-	if(myArray [i] == numeroAleatorio){
-        existe = true;
-        break;
-    }
-  }
-  if(!existe){
-    myArray[myArray.length] = numeroAleatorio;
-  }
-
-}
-
-});
-
 
 </script>
+<script src="assets/js/logica.js"></script>
+<script src="logica.js"></script>
 </body>
 </html>
