@@ -1,11 +1,11 @@
 ;
 //asignar un nombre y versión al cache
-const CACHE_NAME = 'nooturno',
+const CACHE_NAME = 'Nooturno',
   urlsToCache = [
     './',
     '/assets/css/main.css',
     '/assets/js/script.js',
-    'assets/img/icons/ProgramadorFitness.png',
+    'assets/img/icons/noocturno.png',
     'assets/img/icons/favicon.png'
   ]
 
