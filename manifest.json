@@ -1,24 +1,51 @@
 {
     "short_name": "Portafolio",
     "name": "Sergio Portafolio",
-    "theme_color": "#faa500",
-    "background_color": "#faa500",
-    "display": "standalone",
     "icons": [
       {
-        "src": "assets/img/icon_android.png",
+        "src": "assets/img/icons/icon_32.png",
         "type": "image/png",
-        "sizes": "57x57"
+        "sizes": "32x32"
       },
       {
-        "src": "assets/img/icon_android.png",
+        "src": "assets/img/icons/icon_64.png",
         "type": "image/png",
-        "sizes": "114x114"
+        "sizes": "64x64"
       },
       {
-        "src": "assets/img/icono_manifest.png",
+        "src": "assets/img/icons/icon_96.png",
         "type": "image/png",
-        "sizes": "144x144"
+        "sizes": "96x96"
+      },
+      {
+        "src": "assets/img/icons/icon_128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      },
+      {
+        "src": "assets/img/icons/icon_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "assets/img/icons/icon_256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "assets/img/icons/icon_384.png",
+        "type": "image/png",
+        "sizes": "384x384"
+      },
+      {
+        "src": "assets/img/icons/icon_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "assets/img/icons/icon_1024.png",
+        "type": "image/png",
+        "sizes": "1024x1024"
       }
     ],
     "background_color": "#fec902",
