@@ -92,34 +92,6 @@ $( document ).ready(function() {
     BindClickEvent();
 });
 
-function filterClick(){
-  var $container = $('.container-page__filter');
-      $container.isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
- 
-    $('.portfolioFilter a').click(function(){
-        $('.portfolioFilter .current').removeClass('current');
-        $(this).addClass('current');
- 
-        var selector = $(this).attr('data-filter');
-        $container.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-         });
-         return false;
-    }); 
-}
-
 
 function BindClickEvent(){
     var selector = '.container-navegation__menu-items .item';
@@ -156,7 +128,7 @@ function BindClickEvent(){
             $('.container-page--aboutMe').css({"transform":"translateY(0%)", "opacity":"0"});
             $('.container-page--home').css({"transform":"translateY(0%)", "opacity":"0"});
             $('.container-investigation').css({"transform":"translateY(0%)", "opacity":"1"});
-            filterClick();
+  
           }
 
           else if($(this).is("#news")){
@@ -200,7 +172,7 @@ function BindClickEvent(){
             $('.container-page--aboutMe').fadeOut();
 
             $('.container-investigation__groupNews-news').css({'width':'100%'});
-            filterClick();
+
           }
 
           else if($(this).is("#aboutMe")){
