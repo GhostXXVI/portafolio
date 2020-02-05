@@ -145,13 +145,17 @@ function BindClickEvent(){
           if ( $(this).is("#home") ) { 
             $('.container-page').fadeIn();
             $('.container-page').css({"width":"75%"});   
-            $('.container-investigation').css({"width":"14%"});
+            
             $('.icono-menu').css({"transform":"translateY(0px)"}); 
 
             $('.container-page--aboutMe').fadeOut();
             $('.container-page--aboutMe').css({'width':'0','opacity':'0'});
 
+
+            $('.container-investigation').css({"width":"14%"});
             $('.container-investigation__groupNews-news').css({'width':'100%'});
+
+            
             $('.container-page--portfolio').fadeOut();
             $('.container-page--portfolio').css({"width":"0"});   
           }
@@ -159,18 +163,14 @@ function BindClickEvent(){
           else if($(this).is("#portfolio")){
             $('.icono-menu').css({"transform":"translateY(50px)"});
             $('.container-page--portfolio').css({'width':'75%','opacity':'1','display':'flex'});
-            
-            $('.container-page--aboutMe').fadeIn();
 
             $('.container-page--home').fadeOut();
             $('.container-page--home').css({"width":"0"});   
-            
-            $('.container-investigation').css({"width":"14%"});
 
             $('.container-page--aboutMe').css({'width':'0%'});
-            
             $('.container-page--aboutMe').fadeOut();
 
+            $('.container-investigation').css({"width":"14%"});
             $('.container-investigation__groupNews-news').css({'width':'100%'});
 
           }
@@ -178,9 +178,8 @@ function BindClickEvent(){
           else if($(this).is("#aboutMe")){
             $('.icono-menu').css({"transform":"translateY(25px)"});
             $('.container-page--aboutMe').css({'width':'75%','opacity':'1','display':'flex'});
-            
             $('.container-page--aboutMe').fadeIn();
-
+            
             $('.container-page--home').fadeOut();
             $('.container-page--home').css({"width":"0"});   
             
@@ -188,8 +187,6 @@ function BindClickEvent(){
             $('.container-page--portfolio').css({"width":"0"});   
             
             $('.container-investigation').css({"width":"14%"});
-
-
             $('.container-investigation__groupNews-news').css({'width':'100%'});
           }
 
