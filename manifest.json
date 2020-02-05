@@ -1,6 +1,9 @@
 {
     "short_name": "Portafolio",
     "name": "Sergio Portafolio",
+    "theme_color": "#faa500",
+    "background_color": "#faa500",
+    "display": "standalone",
     "icons": [
       {
         "src": "assets/img/icon_android.png",
