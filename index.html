@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#FFBA00" /> 
     <meta name="description" content="Portafolio personal - Sergio Cubas Bernal" />
-    <meta property="og:title" content="Noocturno" />
+    <meta property="og:title" content="Sergio Cubas B." />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://sergiocubas.github.io/test/" />
     <meta property="og:image" content="https://sergiocubas.github.io/test/assets/img/logo.jpg" />
@@ -42,7 +42,8 @@
 
 </head>
 <body>
-<main class="container">
+  
+  <main class="container">
     <div class="container-navegation">
       <div class="mode-night">
         <a class="mode-night__btn" href="#"><div class="dotted"></div></a>  
@@ -267,7 +268,7 @@
     </div>
 
     <div class="container-page container-page--portfolio">
-      <div class="portfolio__container">
+      <div class="container-page__filter">
         <div class="row">
           <div class="col-lg-12">
             <div class="portfolioFilter clearfix">
@@ -278,7 +279,7 @@
             </div>
           </div>  
           <div class="portfolioContainer">
-      
+    
             <div class="portfolio-item webTemplates objects">
               <img src="https://mir-s3-cdn-cf.behance.net/projects/202/cc99b535336825.Y3JvcCwxMzk1LDEwOTEsMCw3ODA.png" alt="image">
             </div>
@@ -682,37 +683,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 <script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
 
-<script>
-  $(document).ready(function(){
-      var $container = $('.portfolioContainer');
-      $container.isotope({
-          filter: '',
-          animationOptions: {
-              duration: 750,
-              easing: 'linear',
-              queue: false
-          }
-      });
-
-
-      $('.portfolioFilter a').on("click",function(){
-          $('.portfolioFilter .current').removeClass('current');
-          $(this).addClass('current');
-   
-          var selector = $(this).attr('data-filter');
-          $container.isotope({
-              filter: selector,
-              animationOptions: {
-                  duration: 750,
-                  easing: 'linear',
-                  queue: false
-              }
-           });
-           return false;
-      }); 
-   
-  });
-</script>
 <script src="assets/js/logica.js"></script>
 <script src="logica.js"></script>
 
