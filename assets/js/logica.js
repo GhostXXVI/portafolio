@@ -1,4 +1,4 @@
-
+/*Carousel - Quien soy*/
 $('.owl-carousel').owlCarousel({
   center: true,
   loop:true,
@@ -22,6 +22,7 @@ $('.owl-carousel').owlCarousel({
 })
 
 
+/*Slider - Inicio*/
 var swiper = new Swiper('.blog-slider', {
   spaceBetween: 30,
   effect: 'fade',
@@ -93,12 +94,15 @@ $( document ).ready(function() {
 });
 
 
+
+
+
+
 function BindClickEvent(){
     var selector = '.container-navegation__menu-items .item';
 
-    //Removes click event of each li
     $(selector ).unbind('click');
-    //Add click event
+
     $(selector ).bind('click', function(){
         $(selector).removeClass('active-page');
         $(this).addClass('active-page');
@@ -206,43 +210,3 @@ function BindClickEvent(){
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-/*Modo nocturno*/
-$('.mode-night').click(function() {
-   $(".dotted").toggleClass('night-active');
-});
-
-$(document).ready(function(){
-  if($(".modal-container__btn-access").children('.btn-keyboard').length%2 == 0){
-  
-  }
-
-var cantidadNumeros = 10;
-var myArray = []
-while(myArray.length < cantidadNumeros ){
-  var numeroAleatorio = Math.ceil(Math.random()*cantidadNumeros);
-  var existe = false;
-  for(var i=-1;i<=myArray.length;i++){
-  $(".item-"+i).text(myArray[i]);
-
-	if(myArray [i] == numeroAleatorio){
-        existe = true;
-        break;
-    }
-  }
-  if(!existe){
-    myArray[myArray.length] = numeroAleatorio;
-  }
-
-}
-
-});
