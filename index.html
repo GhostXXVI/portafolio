@@ -134,106 +134,19 @@
       <div class="container-page__banner" style="background:url('assets/img/banner-secondary.svg'); background-size:cover;background-repeat:no-repeat">
       </div>
       <div class="container-page__featured">
-        <p class="txt-primary txt-primary--greyD">Trabajos destacados</p>
+        <p class="txt-primary txt-primary--greyD">Ultimos trabajos</p>
+        <button class="ad2hs-prompt">Click</button>
         <div class="container-page__featured-outstanding">
           <div class="container-page__featured-outstanding__description">
 
             <div class="blog-slider">
-              <div class="blog-slider__wrp swiper-wrapper">
-                <div class="blog-slider__item swiper-slide">
-                  <div class="blog-slider__img">
-                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="">
-                  </div>
-                  <div class="blog-slider__content">
-                    <p class="txt-primary txt-primary--red">Trabajo 1</p>
-                    <p class="txt-secondary__description">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat.</p>
-                    <p class="txt-primary txt-primary--red">Herramientas</p>
-                    <img src="assets/img/herramientas.svg" alt="">
-                  </div>
-                </div>
-              
-                <div class="blog-slider__item swiper-slide">
-                  <div class="blog-slider__img">
-                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="">
-                  </div>
-                  <div class="blog-slider__content">
-                    <p class="txt-primary txt-primary--red">Trabajo 1</p>
-                    <p class="txt-secondary__description">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat.</p>
-                    <p class="txt-primary txt-primary--red">Herramientas</p>
-                    <img src="assets/img/herramientas.svg" alt="">
-                  </div>
-                </div>
+              <div id="trabajos" class="blog-slider__wrp swiper-wrapper">
 
-                <div class="blog-slider__item swiper-slide">
-                  <div class="blog-slider__img">
-                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="">
-                  </div>
-                  <div class="blog-slider__content">
-                    <p class="txt-primary txt-primary--red">Trabajo 1</p>
-                    <p class="txt-secondary__description">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat.</p>
-                    <p class="txt-primary txt-primary--red">Herramientas</p>
-                    <img src="assets/img/herramientas.svg" alt="">
-                  </div>
-                </div>
-                
+
               </div>
               <div class="blog-slider__pagination"></div>
             </div>
 
-
-            <div class="blog-slider">
-              <div class="blog-slider__wrp swiper-wrapper">
-                <div class="blog-slider__item swiper-slide">
-                  <div class="blog-slider__img">
-                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="">
-                  </div>
-                  <div class="blog-slider__content">
-                    <p class="txt-primary txt-primary--red">Trabajo 1</p>
-                    <p class="txt-secondary__description">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat.</p>
-                    <p class="txt-primary txt-primary--red">Herramientas</p>
-                    <img src="assets/img/herramientas.svg" alt="">
-                  </div>
-                </div>
-              
-                <div class="blog-slider__item swiper-slide">
-                  <div class="blog-slider__img">
-                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="">
-                  </div>
-                  <div class="blog-slider__content">
-                    <p class="txt-primary txt-primary--red">Trabajo 1</p>
-                    <p class="txt-secondary__description">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat.</p>
-                    <p class="txt-primary txt-primary--red">Herramientas</p>
-                    <img src="assets/img/herramientas.svg" alt="">
-                  </div>
-                </div>
-
-                <div class="blog-slider__item swiper-slide">
-                  <div class="blog-slider__img">
-                    <img src="https://res.cloudinary.com/muhammederdem/image/upload/v1535759872/kuldar-kalvik-799168-unsplash.jpg" alt="">
-                  </div>
-                  <div class="blog-slider__content">
-                    <p class="txt-primary txt-primary--red">Trabajo 1</p>
-                    <p class="txt-secondary__description">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-                      dolore magna aliquam erat volutpat.</p>
-                    <p class="txt-primary txt-primary--red">Herramientas</p>
-                    <img src="assets/img/herramientas.svg" alt="">
-                  </div>
-                </div>
-                
-              </div>
-              <div class="blog-slider__pagination"></div>
-            </div>
 
           </div>
         </div>
@@ -721,39 +634,55 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 <script src="https://isotope.metafizzy.co/v1/jquery.isotope.min.js"></script>
-
-<script>
-var $container = $('.portfolioContainer');
-/*$container.isotope({
-    filter: '*',
-    animationOptions: {
-        duration: 750,
-        easing: 'linear',
-        queue: false
-    }
-});*/
-
-$('.portfolioFilter a').on("click",function(){
-    $('.portfolioFilter .current').removeClass('current');
-    $(this).addClass('current');
-
-    var selector = $(this).attr('data-filter');
-    $container.isotope({
-        filter: selector,
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
-    return false;
-}); 
-
-</script>
 <script src="assets/js/logica.js"></script>
 <script src="logica.js"></script>
-<script>
 
+<!--Firebase-->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script src="assets/js/firebase-access.js"></script>
+
+<script>
+  var databasePortfolio = firebase.database();
+  var referenciaPortfolio=databasePortfolio.ref("portafolio");
+  console.log(referenciaPortfolio);
+
+  $(document).ready(function(){
+    referenciaPortfolio.on('value',function(datosPortafolio){
+      $("#trabajos div.card").remove();
+            portfolio=datosPortafolio.val();
+            // Recorremos y los mostramos
+            console.log(portfolio);
+      // Recorremos y los mostramos
+      $.each(portfolio, function(indice,portafolio){
+        var respuesta='<div class="blog-slider__item swiper-slide">';
+          respuesta+='  <div class="blog-slider__img">';
+            respuesta+='    <img src="'+portafolio.imagen+'" alt="">';
+            respuesta+='  </div>';
+            respuesta+='  <div class="blog-slider__content">';
+              respuesta+='    <p class="txt-primary txt-primary--red">Trabajo 1</p>';
+              respuesta+='      <p class="txt-secondary__description">';
+                respuesta+='        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet';
+                respuesta+='    dolore magna aliquam erat volutpat.</p>';
+            respuesta+='  <p class="txt-primary txt-primary--red">Herramientas</p>';
+            respuesta+='  <img src="assets/img/herramientas.svg" alt="">';
+          respuesta+='    </div>';
+        respuesta+='  </div>';
+  
+        $(respuesta).appendTo('#trabajos');
+        
+      });
+    },function(objetoError){
+        console.log('Error de lectura:'+objetoError.code);
+    });
+
+    
+
+  });
+</script>
+
+<script>
 function showAddToHomeScreen() {
 
 var a2hsBtn = document.querySelector(".ad2hs-prompt");
@@ -763,7 +692,6 @@ a2hsBtn.style.display = "block";
 a2hsBtn.addEventListener("click", addToHomeScreen);
 
 }
-
 
 function addToHomeScreen() {  var a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
   a2hsBtn.style.display = 'none';  // Show the prompt
@@ -780,8 +708,6 @@ function addToHomeScreen() {  var a2hsBtn = document.querySelector(".ad2hs-promp
   deferredPrompt = null;
 
 });}
-
-
 </script>
 </body>
 </html>
