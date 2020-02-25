@@ -11,8 +11,9 @@ $(document).ready(function(){
         0:{
           items:1,
           loop:false,
+          autoplay:true,
           stagePadding: 10,
-          margin:2
+          margin:5
         },
         600:{
           items:1
@@ -98,7 +99,7 @@ $( document ).ready(function() {
 
       if ( $(window).width() <= 600) {  
         if ( $(this).is("#home") ) { 
-          $('.container-page--home').css({"transform":"translateY(-100%)", "opacity":"1"});
+          $('.container-page--home').css({"transform":"translateY(-100.5%)", "opacity":"1"});
           $('.container-page--aboutMe').css({"transform":"translateY(0%)", "opacity":"0"});
           $('.container-investigation').css({"transform":"translateY(0%)", "opacity":"0"});
           $('.icono-menu').css({"transform":"translateY(0px)"});
@@ -106,7 +107,7 @@ $( document ).ready(function() {
         }
 
         else if($(this).is("#aboutMe")){
-          $('.container-page--aboutMe').css({"transform":"translateY(-99.5%)", "opacity":"1"});
+          $('.container-page--aboutMe').css({"transform":"translateY(-100.5%)", "opacity":"1"});
           $('.container-page--home').css({"transform":"translateY(0%)", "opacity":"0"});
           $('.container-investigation').css({"transform":"translateY(0%)", "opacity":"0"});
           $('.container-page--portfolio').css({"transform":"translateY(0%)", "opacity":"0"});
@@ -122,7 +123,7 @@ $( document ).ready(function() {
         else if($(this).is("#news")){
           $('.container-page--home').css({"transform":"translateY(0%)", "opacity":"0"});
           $('.container-page--aboutMe').css({"transform":"translateY(0%)", "opacity":"0"});
-          $('.container-investigation').css({"transform":"translateY(-199.5%)", "opacity":"1"});
+          $('.container-investigation').css({"transform":"translateY(-200%)", "opacity":"1"});
           $('.icono-menu').css({"transform":"translateY(75px)"});
           $('.container-page--portfolio').css({"transform":"translateY(0%)", "opacity":"0"});
         }

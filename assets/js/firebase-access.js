@@ -13,4 +13,3 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var referencia=database.ref("portafolio");
 var refNoticias=database.ref("noticias");
-

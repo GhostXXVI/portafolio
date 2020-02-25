@@ -174,60 +174,25 @@
           <div class="col-lg-12">
             <div class="portfolioFilter clearfix">
               <a href="#" data-filter="*" class="current">Todos</a>
-              <a href="#" data-filter=".webTemplates">Ilustraciones</a>
-              <a href="#" data-filter=".logos">Website</a>
-              <a href="#" data-filter=".drawings">Apps</a>
+              <a href="#" data-filter=".ilustraciones">Ilustraciones</a>
+              <a href="#" data-filter=".websites">Website</a>
+              <a href="#" data-filter=".apps">Apps</a>
             </div>
           </div>  
-          <div class="portfolioContainer">
+          <div id="portfolioContainer" class="portfolioContainer">
       
-            <div class="portfolio-item webTemplates objects">
+            <div class="portfolio-item ilustraciones objects">
               <img src="https://mir-s3-cdn-cf.behance.net/projects/202/cc99b535336825.Y3JvcCwxMzk1LDEwOTEsMCw3ODA.png" alt="image">
             </div>
       
-            <div class="portfolio-item drawings places">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/d4cfa934191261.Y3JvcCw2MTMsNDc5LDQsMjA0.jpg" alt="image">
+            <div class="portfolio-item websites">
+              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/181a7b35469661.Y3JvcCw3NjUsNTk5LDY3LDA.png" alt="image">
             </div>
-      
-            <div class="portfolio-item webTemplates food">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/11893193.5482088f6f391.png" alt="image">
-            </div>
-      
-            <div class="portfolio-item  drawings">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/be4b9728308865.55b92edb950fc.jpg" alt="image">
-            </div>
-      
-            <div class="portfolio-item webTemplates">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/12963199.548365055868a.png" alt="image">
-            </div>
-      
-            <div class="portfolio-item ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/20342607.5434c04b49254.png" alt="image">
-            </div>
-      
-            <div class="portfolio-item drawings">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/b11bbb26474383.555f91fd42584.jpg" alt="image">
-            </div>
-      
-            <div class="portfolio-item webTemplates">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/14385875.548573dae7a09.jpg" alt="image">
-            </div>
-      
-            <div class="portfolio-item drawings">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/14569777.5485b3876a1b9.png" alt="image">
-            </div>
-            <div class="portfolio-item logos">
-              <img src=" https://mir-s3-cdn-cf.behance.net/projects/202/1d854a24500155.5505cccd057a4.jpg" alt="image">
-            </div>
-            <div class="portfolio-item ui">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/202/f9b95b26406487.555cc1fded76f.jpg" alt="image">
-            </div>
-            
-            <div class="portfolio-item logos">
+
+            <div class="portfolio-item apps">
               <img src="https://mir-s3-cdn-cf.behance.net/projects/202/181a7b35469661.Y3JvcCw3NjUsNTk5LDY3LDA.png" alt="image">
             </div>
             
-          
           </div>
         </div>
       </div>
@@ -538,35 +503,47 @@
 <script src="logica.js"></script>
 
 <!--Firebase-->
-<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-<script src="assets/js/firebase-access.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script defer src="assets/js/firebase-access.js"></script>
 
-<script>
+<script defer>
   $(document).ready(function(){
+
     referencia.on("value",function(snapshot){
       /*$("#trabajo div.swiper-slide").remove();*/
       portfolio=snapshot.val();
       // Recorremos y los mostramos
-      
       $.each(portfolio, function(indice,valor){
-        var respuesta='<div class="blog-slider__item swiper-slide">'
-          +'  <div class="blog-slider__img">'
-            +'    <img src="'+valor.imagen+'" alt="">'
-            +'  </div>'
-            +'  <div class="blog-slider__content">'
-              +'    <p class="txt-primary txt-primary--red">'+valor.tipo[0]+'</p>'
-              +'      <p class="txt-secondary__description">'
-                +'        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet'
-                +'    dolore magna aliquam erat volutpat.</p>'
-            +'  <p class="txt-primary txt-primary--red">Herramientas</p>'
-            +'  <img src="assets/img/herramientas.svg" alt="">'
-          +'    </div>';
-        +'  </div>';
+        var respuesta='<div class="blog-slider__item swiper-slide">';
+          respuesta+='<div class="blog-slider__img">';
+            respuesta+='<img src="'+valor.url+'" alt="">';
+            respuesta+='</div>';
+            respuesta+='<div class="blog-slider__content">';
+              respuesta+='<p class="txt-primary txt-primary--red">'+valor.titulo+'</p>';
+              respuesta+='<p class="txt-secondary__description">'+valor.descripcion+'</p>';
+            respuesta+='<p class="txt-primary txt-primary--red">Herramientas</p>';
+            respuesta+='<img width="100%" src="'+valor.urlHerramientas+'" alt="">';
+          respuesta+='</div>';
+        respuesta+='</div>';
   
         $(respuesta).appendTo('#trabajo');
       });
-      
+
+      $.each(portfolio, function(indice,valor){
+        var respuesta='<div class="blog-slider__item swiper-slide">';
+          respuesta+='<div class="blog-slider__img">';
+            respuesta+='<img src="'+valor.url+'" alt="">';
+            respuesta+='</div>';
+            respuesta+='<div class="blog-slider__content">';
+              respuesta+='<p class="txt-primary txt-primary--red">'+valor.titulo+'</p>';
+              respuesta+='<p class="txt-secondary__description">'+valor.descripcion+'</p>';
+            respuesta+='<p class="txt-primary txt-primary--red">Herramientas</p>';
+            respuesta+='adsa<img class="img-herramientas" src="'+valor.urlHerramientas+'" alt="">';
+          respuesta+='</div>';
+        respuesta+='</div>';
+        $(respuesta).appendTo('#portfolioContainer');
+      });
 
       /*Slider - Inicio*/
       var swiper = new Swiper('.blog-slider', {
@@ -593,17 +570,35 @@
       noticias=snapshot.val();
       // Recorremos y los mostramos
       $.each(noticias, function(indice,valor){
-        var respuesta='<div class="container-investigation__groupNews-news"  style="background-image: url('+valor.imagen+'); background-repeat: no-repeat; background-size: cover; background-position: center center;">'
-            +'<div class="container-investigation__groupNews-news__details">'
-            +'<p class="txt-primary">'+valor.titulo+'</p>'
-            +'<p class="txt-secondary__description">'+valor.descripcion+'</p>'
-            +'<p class="txt-secondary">'
-            +'<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>'+valor.dia
-            +'<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>'+valor.hora
-            +'</p>'
-          +'</div>'
-        +'</div>';
+
+        var respuesta='<div class="container-investigation__groupNews-news"  style="background-image: url('+valor.imagen+'); background-repeat: no-repeat; background-size: cover; background-position: center center;">';
+
+          respuesta+='<div class="container-investigation__groupNews-news__details">';
+            respuesta+='<p class="txt-primary txt-primary--blog">'+valor.titulo+'</p>';
+            respuesta+='<p class="txt-secondary__description">'+valor.descripcion+'</p>';
+            respuesta+='<p class="txt-secondary txt-secondary--time">';
+            respuesta+='<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>'+valor.dia;
+            respuesta+='<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>'+valor.hora;
+            respuesta+='</p>';
+          respuesta+='</div>';
+        respuesta+='</div>';
+  
         $(respuesta).appendTo('#blog');
+      });
+
+      /*Slider - Inicio*/
+      var swiper = new Swiper('.blog-slider', {
+        spaceBetween: 30,
+        effect: 'fade',
+        loop: true,
+        mousewheel: {
+          invert: false,
+        },
+        // autoHeight: true,
+        pagination: {
+          el: '.blog-slider__pagination',
+          clickable: true,
+        }
       });
 
     },function(objetoError){
