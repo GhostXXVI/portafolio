@@ -37,18 +37,23 @@
 <div class="container container-portfolio">
   <div class="container-portfolio__addWork">
     <div class="data-form">
-      <div class="data-form__preview" style="background-image: url(../assets/img/banner-secondary.svg);background-repeat: no-repeat;background-size: cover;background-position: center;"></div>
-      <div class="input-group">
-        <input type="text"  id="titulo" placeholder="Ingresa URL de fondo" class="form-control  p-3" required/>
+      <div class="data-form__preview" id="url-preview">
+        <p id="titulo-preview"></p>
       </div>
       <div class="input-group">
-        <input type="text"  id="url" placeholder="Título de la notícia" class="form-control  p-3" required/>
+        <input type="text"  id="url" class="input-data form-control  p-3" placeholder="Ingresa URL de fondo"  required/>
       </div>
       <div class="input-group">
-        <textarea id="descripcion" name="" id="" rows="5"></textarea>
+        <input type="text"  id="titulo" class="input-data form-control  p-3" placeholder="Título de la notícia" required/>
+      </div>
+      <div class="input-group">
+        <textarea id="descripcion" class="input-data" name="" id="" rows="5"></textarea>
       </div>
       <div class="input-group"> 
-        <input type="text"  id="urlHerramientas" placeholder="Título de la notícia" class="form-control  p-3" required/>
+        <input type="text"  id="urlHerramientas" placeholder="Url Herramientas" class="form-control  p-3" required/>
+      </div>
+      <div class="input-group"> 
+        <input type="text"  id="urlPublicación" placeholder="Url publicación" class="form-control  p-3" required/>
       </div>
       <div class="input-group">
         <select id="tipoTrabajo">
@@ -65,7 +70,28 @@
   </div>
 
   <div class="container-portfolio__seeWorks">
-
+    <div class="seeWorks-navegation">
+      <a href="" class="btn-navegation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <p> Portafolio</p>
+      </a>
+      <a href="" class="btn-navegation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+        <p> Archivos</p>
+      </a>
+      <a href="" class="btn-navegation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <p> Herramientas</p>
+      </a>
+      <a href="" class="btn-navegation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        <p> Habilidades</p>
+      </a>
+      <a href="" class="btn-navegation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <p> Trabajos</p>
+      </a>
+    </div>
     <div class="seeWorks-works">
       <div class="header-menu__content">
         <ul>
@@ -172,6 +198,39 @@
     </div>-->
   </div>
 
+
+  <div class="seeWorks-works">
+    <div class="header-menu__content">
+      <ul>
+        <li> <a class="txt-primary" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg> 
+          Ver todos</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="seeWorks-works__header">
+      <div class="seeWorks-works__header-menu">
+
+        <div id="menu-portfolio" class="btn-dashboard btn-dashboard__works">
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x close-menu"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-left"><line x1="17" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="17" y1="18" x2="3" y2="18"></line></svg>
+        </div>
+
+        <p id="title-menu" class="txt-primary">Trabajos</p>
+      </div>
+      <div class="seeWorks-works__header-filter">
+
+      </div>
+    </div>
+    
+    <div class="seeWorks--archive">
+      
+    </div>
+    <!--<div id="trabajo" class="blog-slider__wrp swiper-wrapper">
+    </div>-->
+  </div>
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -240,6 +299,27 @@ $("#menu-portfolio").click(function() {
   }
 });
 
+</script>
+
+<script>
+  $('.input-data').on("keyup",function(){
+    switch ($(this).attr('id')){
+      case 'url':
+        if($(this).val() == ""){
+          $('#url-preview').css({'background':'url(../assets/img/banner-secondary.svg)','background-size':'cover','background-repeat':'no-repeat','background-position':'center'});
+        }else{
+          $('#url-preview').css({'background':'url('+$(this).val()+')','background-size':'cover','background-repeat':'no-repeat','background-position':'center'});
+        }
+        
+      break;
+
+      case 'titulo':
+        $('#titulo-preview').text($(this).val());
+      break;
+      default:
+    }
+
+  });
 </script>
 </body>
 
