@@ -23,7 +23,7 @@
     <link rel="shortcut icon" type="image/png" href="../assets/img/icons/noocturno.png">
     <link rel="apple-touch-icon" href="../assets/img/icons/noocturno.png">
     <link rel="apple-touch-startup-image" href="../assets/img/icons/noocturno.png">
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="../manifest.json">
     
     
     <title>Portafolio</title>    
@@ -34,6 +34,10 @@
 </head>
 
 <body>
+  <input type="file" name="fichero" value="" id="fichero">
+  <div id="imagenesFirebase" class="imagenesFirebase">
+
+  </div>
 <div class="container container-portfolio">
   <div class="container-portfolio__addWork">
     <div class="data-form">
@@ -238,8 +242,15 @@
 <script></script>
 
 <!--Firebase-->
-<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>-->
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+
+
 <script defer src="../assets/js/firebase-access.js"></script>
 <script>
   
@@ -283,6 +294,7 @@
   });
 </script>
 
+
 <script>
 $("#menu-portfolio").click(function() {
   $('.header-menu__content').toggleClass("expand");
@@ -321,6 +333,7 @@ $("#menu-portfolio").click(function() {
 
   });
 </script>
+
 </body>
 
 </html>

@@ -13,3 +13,51 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var referencia=database.ref("portafolio");
 var refNoticias=database.ref("noticias");
+
+window.onload = inicializar;
+
+var fichero;
+var storageRef;
+var imagenFBRef;
+function inicializar(){
+    fichero = document.getElementById("fichero");
+    fichero.addEventListener("change",subirImagenFirebase, false);
+
+    storageRef = firebase.storage().ref();
+    imagenFBRef = firebase.database().ref().child("imagenesFB");
+    mostrarImagen();
+}
+function mostrarImagen(){
+    imagenFBRef.on("value",function(snapshot){
+        var datos = snapshot.val();
+        var result = "";
+        for(var key in datos){
+            result += '<img src="'+datos[key].url +'"/>';
+        }
+        document.getElementById("imagenesFirebase").innerHTML = result;
+    });
+}
+
+function subirImagenFirebase(){
+    var imagenSubir = fichero.files[0];
+    var uploadTask = storageRef.child('imagenes/' + imagenSubir.name).put(imagenSubir);
+
+    uploadTask.on('state_changed',
+    function(snapshot){
+
+    }, function(error){
+        alert("problema");
+        console.log(error);
+    }, function(){
+
+        var downloadURL = uploadTask.snapshot.downloadURL;
+        console.log(uploadTask.snapshot);
+        crearNodoEnBDFirebase(imagenSubir.name, downloadURL);
+    });
+}
+function crearNodoEnBDFirebase(nombreImagen, downloadURL){
+imagenFBRef.push({
+    nombre:nombreImagen, url: downloadURL
+});
+}
+

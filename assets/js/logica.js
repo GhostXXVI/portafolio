@@ -175,7 +175,13 @@ $( document ).ready(function() {
             pPortfolio.css({"width":"0%","opacity":"0"});
 
             pBlog.css({"width":"87%"});
-            $('.container-investigation__groupNews-news').css({"width":"32.33%"});
+            /*1920*/
+            if($(window).width() > 1300){
+              $('.container-investigation__groupNews-news').css({"width":"20%"});
+            }else{
+              $('.container-investigation__groupNews-news').css({"width":"32.33%"});
+            }
+            
           break;
         }
       }
