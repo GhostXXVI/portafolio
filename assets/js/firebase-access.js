@@ -20,7 +20,7 @@ var fichero;
 var storageRef;
 var imagenFBRef;
 function inicializar(){
-    fichero = document.getElementById("fichero");
+    fichero = document.getElementById("urlFondo");
     fichero.addEventListener("change",subirImagenFirebase, false);
 
     storageRef = firebase.storage().ref();
@@ -32,7 +32,14 @@ function mostrarImagen(){
         var datos = snapshot.val();
         var result = "";
         for(var key in datos){
-            result += '<img src="'+datos[key].url +'"/>';
+            result += '<div class="card-archive"><div class="seeWorks-archive"'+
+            '<div class="seeWorks-works__work-others__content">'+
+            '<img class="bg-image-archive" src="'+datos[key].url+'"/>'+
+            '<div class="btn-crud btn-crud--delete"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></div>'+
+            '<div class="btn-crud btn-crud--edit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></div>'+            
+            '</div>'+
+            '<p class="txt-primary">'+datos[key].nombre+'</p>'+
+            '</div></div>';
         }
         document.getElementById("imagenesFirebase").innerHTML = result;
     });
@@ -42,22 +49,33 @@ function subirImagenFirebase(){
     var imagenSubir = fichero.files[0];
     var uploadTask = storageRef.child('imagenes/' + imagenSubir.name).put(imagenSubir);
 
-    uploadTask.on('state_changed',
-    function(snapshot){
+    
 
+    uploadTask.on('state_changed', function(snapshot){
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+        switch (snapshot.state) {
+            case firebase.storage.TaskState.PAUSED: // or 'paused'
+            console.log('Upload is paused');
+            break;
+            case firebase.storage.TaskState.RUNNING: // or 'running'
+            console.log('Upload is running');
+            break;
+        }
     }, function(error){
         alert("problema");
         console.log(error);
     }, function(){
-
         var downloadURL = uploadTask.snapshot.downloadURL;
-        console.log(uploadTask.snapshot);
+        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         crearNodoEnBDFirebase(imagenSubir.name, downloadURL);
+        console.log("exit");
+        });
     });
 }
 function crearNodoEnBDFirebase(nombreImagen, downloadURL){
 imagenFBRef.push({
-    nombre:nombreImagen, url: downloadURL
+    nombre:nombreImagen, url: downloadURL,
 });
 }
 
