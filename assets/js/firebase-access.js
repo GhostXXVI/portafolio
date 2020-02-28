@@ -48,29 +48,21 @@ function mostrarImagen(){
 function subirImagenFirebase(){
     var imagenSubir = fichero.files[0];
     var uploadTask = storageRef.child('imagenes/' + imagenSubir.name).put(imagenSubir);
-
     
-
     uploadTask.on('state_changed', function(snapshot){
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log('Upload is ' + progress + '% done');
-        switch (snapshot.state) {
-            case firebase.storage.TaskState.PAUSED: // or 'paused'
-            console.log('Upload is paused');
-            break;
-            case firebase.storage.TaskState.RUNNING: // or 'running'
-            console.log('Upload is running');
-            break;
-        }
+        $('#progress_url').css("width",progress+"%");
     }, function(error){
         alert("problema");
         console.log(error);
     }, function(){
-        var downloadURL = uploadTask.snapshot.downloadURL;
+        /*var downloadURL = uploadTask.snapshot.downloadURL;
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         crearNodoEnBDFirebase(imagenSubir.name, downloadURL);
         console.log("exit");
-        });
+        });*/
+        $('.alert-succes').slideDown( 1000 ).fadeOut( 1500 );
     });
 }
 function crearNodoEnBDFirebase(nombreImagen, downloadURL){

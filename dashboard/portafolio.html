@@ -29,6 +29,8 @@
     <title>Portafolio</title>    
     <script src="https://kit.fontawesome.com/85bf147151.js"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
+
+    
 <style>
 </style>
 </head>
@@ -38,11 +40,17 @@
 <div class="container container-portfolio">
   <div class="container-portfolio__addWork">
     <div class="data-form">
+      <div class="alert alert-succes">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+        <p>¡Subido exitosamente!</p>
+      </div>
+
       <div class="data-form__preview" id="url-preview">
         <p id="titulo-preview"></p>
       </div>
       <div class="input-group">
         <input type="file" name="urlFondo" value="" id="urlFondo">
+        <div id="progress_url"></div>
         <input type="text"  id="url" class="input-data form-control  p-3" placeholder="Ingresa URL de fondo"  required/>
       </div>
       <div class="input-group">
@@ -71,7 +79,7 @@
     
   </div>
 
-  <div class="container-portfolio__seeWorks">
+  <div id="navbar" class="container-portfolio__seeWorks">
     <div class="seeWorks-navegation">
       <a href="" class="btn-navegation">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -235,14 +243,17 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <!--<script src="assets/js/select.js"></script>-->
-<script></script>
-
+<script>
+  $('.alert-succes').hide();
+</script>
 <!--Firebase-->
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
 <!--<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>-->
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+
+
 
 
 
@@ -328,6 +339,7 @@ $("#menu-portfolio").click(function() {
 
   });
 </script>
+
 
 </body>
 
