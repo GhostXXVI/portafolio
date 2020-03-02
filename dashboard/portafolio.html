@@ -29,8 +29,6 @@
     <title>Portafolio</title>    
     <script src="https://kit.fontawesome.com/85bf147151.js"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
-
-    
 <style>
 </style>
 </head>
@@ -48,9 +46,14 @@
       <div class="data-form__preview" id="url-preview">
         <p id="titulo-preview"></p>
       </div>
+
       <div class="input-group">
-        <input type="file" name="urlFondo" value="" id="urlFondo">
-        <div id="progress_url"></div>
+        <div class="file-input">
+          <input type="file" name="file-input" id="file-input" class="file-input__input">
+          <label class="file-input__label" for="file-input">
+            <span>Subir imagen</span></label>
+            <div id="progress_url"></div>
+        </div>
         <input type="text"  id="url" class="input-data form-control  p-3" placeholder="Ingresa URL de fondo"  required/>
       </div>
       <div class="input-group">
@@ -73,8 +76,6 @@
         </select>
       </div>
         <button type="button" class="btn btn-addWork" id="botonGuardar">Publicar trabajo</button>
-  
-
     </div>
     
   </div>
@@ -87,7 +88,7 @@
       </a>
       <a href="" class="btn-navegation">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-        <p> Archivos</p>
+        <p> Imagenes</p>
       </a>
       <a href="" class="btn-navegation">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -201,9 +202,6 @@
           </div>
       </div>
     </div>
-    <div class="seeWorks--archive">
-      
-    </div>
     <!--<div id="trabajo" class="blog-slider__wrp swiper-wrapper">
     </div>-->
   </div>
@@ -227,7 +225,7 @@
           <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-left"><line x1="17" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="17" y1="18" x2="3" y2="18"></line></svg>
         </div>
 
-        <p id="title-menu" class="txt-primary">Archivos</p>
+        <p id="title-menu" class="txt-primary">Imagenes</p>
       </div>
     </div>
     
@@ -242,9 +240,13 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 <!--<script src="assets/js/select.js"></script>-->
 <script>
+  $('#url-preview').css({'background':'url(../assets/img/banner-secondary.svg)','background-size':'cover','background-repeat':'no-repeat','background-position':'center'});
   $('.alert-succes').hide();
+  $('#progress_url').hide();  
+  
 </script>
 <!--Firebase-->
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
@@ -253,13 +255,12 @@
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
 
-
-
-
-
 <script src="../assets/js/firebase-access.js"></script>
 <script>
-  
+  $(function(){
+      new Clipboard('.btn-crud');
+  });
+
   $("#botonGuardar").click(function(){      
       titulo=$("#titulo").val();
       url=$("#url").val();
