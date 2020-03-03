@@ -43,43 +43,38 @@
         <p>¡Subido exitosamente!</p>
       </div>
 
-      <div class="data-form__preview" id="url-preview">
-        <p id="titulo-preview"></p>
-      </div>
-
-      <div class="input-group">
-        <div class="file-input">
-          <input type="file" name="file-input" id="file-input" class="file-input__input">
-          <label class="file-input__label" for="file-input">
-            <span>Subir imagen</span></label>
-            <div id="progress_url"></div>
+        <div class="input-group">
+        <input type="text"  id="company" class="input-data form-control  p-3" placeholder="Empresa" required/>
         </div>
-        <input type="text"  id="imagen" class="input-data form-control  p-3" placeholder="Url imagen"  required/>
-      </div>
 
-      <div class="input-group">
-        <input type="text"  id="enlace" class="input-data form-control  p-3" placeholder="Url enlace" required/>
-      </div>
+        <div class="input-group">
+        <input type="text"  id="position" class="input-data form-control  p-3" placeholder="Puesto" required/>
+        </div>
 
-      <div class="input-group">
-        <select id="tipo">
-          <option value="websites"> Sitio web</option>
-          <option value="ilustraciones"> Ilustración </option>
-          <option value="apps"> App </option>
-        </select>
-      </div>
+        <div class="input-group">
+        <input type="text"  id="logo" class="input-data form-control  p-3" placeholder="Url logo" required/>
+        </div>
 
-      <hr>
-      <div class="input-group">
-        <textarea id="descripcion" class="input-data" name="" id="" rows="5"></textarea>
-      </div>
-      <div class="input-group"> 
-        <input type="text"  id="urlHerramientas" placeholder="Url Herramientas" class="form-control  p-3" required/>
-      </div>
-      <div class="input-group"> 
-        <input type="text"  id="urlPublicación" placeholder="Url publicación" class="form-control  p-3" required/>
-      </div>
-      
+        <div class="input-group">
+            <input type="text"  id="color" class="input-data form-control  p-3" placeholder="Color principal" required/>
+          </div>
+
+        <div class="input-group">
+        <input type="date" id="dateI" name="dateI">
+        </div>
+
+        <div class="input-group">
+        <input type="date" id="dateF" name="dateF">
+        </div>
+
+        <div class="input-group">
+        <textarea id="description" class="input-data" name="" id="" rows="5"></textarea>
+        </div>
+
+        <div class="input-group">
+            <input type="text"  id="skills" class="input-data form-control  p-3" placeholder="Url herramientas" required/>
+        </div>
+
         <button type="button" class="btn btn-addWork" id="botonGuardar">Publicar trabajo</button>
     </div>
     
@@ -248,10 +243,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 <!--<script src="assets/js/select.js"></script>-->
 <script>
-  $('#url-preview').css({'background':'url(../assets/img/banner-secondary.svg)','background-size':'cover','background-repeat':'no-repeat','background-position':'center'});
-  $('.alert-succes').hide();
-  $('#progress_url').hide();  
-  
+$('.alert-succes').hide(); 
 </script>
 <!--Firebase-->
 <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
@@ -266,21 +258,44 @@
       new Clipboard('.btn-crud');
   });
 
-  $("#botonGuardar").click(function(){      
-      imagen=$("#imagen").val();
-      enlace=$("#enlace").val();
-      tipo=$("#tipo").val();
+  $('#color').on("keyup",function(){
+    if($(this).val()==""){
+      $(this).css({"background":$(this).val(),"color":"black"});
+    }else{
+      $(this).css({"background":$(this).val(),"color":"white"});
+    }
+  });
 
-      referencia.push({
-        imagen: imagen,
-        enlace:enlace,
-        tipo:tipo,
-      },function()
-      {
-        $("#imagen").val('');
-        $("#enlace").val('');
-        $("#tipo").val('');
-      });
+  $("#botonGuardar").click(function(){      
+    company=$("#company").val();
+    position=$("#position").val();
+    logo=$("#logo").val();
+    color=$("#color").val();
+    dateI=$("#dateI").val();
+    dateF=$("#dateF").val();
+    description=$("#description").val();
+    skills=$("#skills").val();
+
+    refEmpleo.push({
+        company: company,
+        position:position,
+        logo:logo,
+        color:color,
+        dateI:dateI,
+        dateF:dateF,
+        description:description,
+        skills:skills,
+    },function()
+    {
+        $("#company").val('');
+        $("#position").val('');
+        $("#color").val('');
+        $("#logo").val('');
+        $("#dateI").val('');
+        $("#dateF").val('');
+        $("#description").val('');
+        $("#skills").val('');
+    });
   });
 </script>
 

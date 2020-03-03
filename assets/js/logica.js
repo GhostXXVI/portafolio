@@ -1,29 +1,4 @@
-/*Carousel - Quien soy*/
-$(document).ready(function(){
-  $('.owl-carousel').owlCarousel({
-    center: true,
-    loop:true,
-    autoWidth:true,
-    margin:30,
-    autoplay:false,
-    responsiveClass:true,
-    responsive:{
-        0:{
-          items:1,
-          loop:false,
-          autoplay:true,
-          stagePadding: 10,
-          margin:5
-        },
-        600:{
-          items:1
-        },
-        1000:{
-          items:2
-        }
-    }
-  });
-});
+
 
 
 
@@ -194,7 +169,7 @@ $( document ).ready(function() {
 
 
 
-var $container = $('.portfolioContainer');
+
 /*$container.isotope({
     filter: '*',
     animationOptions: {
@@ -204,18 +179,3 @@ var $container = $('.portfolioContainer');
     }
 });*/
 
-$('.portfolioFilter a').on("click",function(){
-    $('.portfolioFilter .current').removeClass('current');
-    $(this).addClass('current');
-
-    var selector = $(this).attr('data-filter');
-    $container.isotope({
-        filter: selector,
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
-    return false;
-}); 
