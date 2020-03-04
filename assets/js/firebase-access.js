@@ -11,8 +11,10 @@ var config = {
 
 firebase.initializeApp(config);
 var database = firebase.database();
+
 var referencia=database.ref("portafolio");
 var refEmpleo=database.ref("Empleo");
+var refTrabajosP=database.ref("trabajosP");
 var refNoticias=database.ref("noticias");
 
 

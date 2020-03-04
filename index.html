@@ -131,12 +131,12 @@
       <div class="container-page__banner" style="background:url('assets/img/banner-secondary.svg'); background-size:cover;background-repeat:no-repeat">
       </div>
       <div class="container-page__featured">
-        <p class="txt-primary txt-primary--greyD">Ultimos trabajos</p>
+        <p class="txt-primary txt-primary--greyD">Trabajos personales</p>
         <div class="container-page__featured-outstanding">
           <div class="container-page__featured-outstanding__description">
 
             <div class="blog-slider">
-              <div id="trabajo" class="blog-slider__wrp swiper-wrapper">
+              <div id="trabajoP" class="blog-slider__wrp swiper-wrapper">
 
 
               </div>
@@ -317,11 +317,11 @@
 <script src="logica.js"></script>
 
 <!--Firebase-->
-<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
-<script defer src="assets/js/firebase-access.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script src="assets/js/firebase-access.js"></script>
 
-<script defer>
+<script >
   $(document).ready(function(){
 
     referencia.on("value",function(snapshot){
@@ -329,10 +329,9 @@
       portfolio=snapshot.val();
       // Recorremos y los mostramos
       $.each(portfolio, function(indice,valor){
-        var respuesta='<a class="portfolio-item '+valor.tipo+'" href="'+valor.enlace+'" target="_Blank"><div>'+
+        var respuesta='<a class="portfolio-item '+valor.tipo+'" href="'+valor.enlace+'" target="_Blank">'+
         '<img src="'+valor.imagen+'" alt="image">'+
-        '</div></a>';
-
+        '</a>';
 
       var $container = $('.portfolioContainer');
       $('.portfolioFilter a').on("click",function(){
@@ -351,8 +350,22 @@
       return false;
       }); 
             
-      /*
-      $.each(portfolio, function(indice,valor){
+        $(respuesta).appendTo('#portfolioContainer');
+      });
+
+
+
+    },function(objetoError){
+        console.log('Error de lectura:'+objetoError.code);
+    });
+
+
+
+    refTrabajosP.on("value",function(snapshot){
+      /*$("#trabajo div.swiper-slide").remove();*/
+      refTrabajosP=snapshot.val();
+      // Recorremos y los mostramos
+      $.each(refTrabajosP, function(indice,valor){
         var respuesta='<div class="blog-slider__item swiper-slide">';
           respuesta+='<div class="blog-slider__img">';
             respuesta+='<img src="'+valor.url+'" alt="">';
@@ -363,12 +376,12 @@
             respuesta+='<p class="txt-primary txt-primary--red">Herramientas</p>';
             respuesta+='<img width="100%" src="'+valor.urlHerramientas+'" alt="">';
           respuesta+='</div>';
-        respuesta+='</div>';*/
+        respuesta+='</div>';
   
-        $(respuesta).appendTo('#portfolioContainer');
-      });
+        $(respuesta).appendTo('#trabajoP');
 
-      /*Slider - Inicio*/
+
+              /*Slider - Inicio*/
       var swiper = new Swiper('.blog-slider', {
         spaceBetween: 30,
         effect: 'fade',
@@ -382,10 +395,15 @@
           clickable: true,
         }
       });
+      });
+
+ 
 
     },function(objetoError){
         console.log('Error de lectura:'+objetoError.code);
     });
+
+
 
 
     refNoticias.on("value",function(snapshot){
