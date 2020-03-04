@@ -10,7 +10,7 @@ $('.modal-toggle').on('click', function(e) {
       var shouldShowPopup = localStorage.getItem('cookiePopupConsumed') !== '1';
       if (shouldShowPopup) {
         setTimeout(function () {
-          $('.container').css('filter','blur(6px)');
+          $('.container').css('filter','blur(2px)');
           document.getElementById('cookie-popup').className += ' is-visible';
         }, 1000);
       }
