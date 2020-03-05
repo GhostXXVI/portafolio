@@ -112,6 +112,13 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                    Contáctame</a>
                 </li>
+
+                <li id="download" class="item">
+                  <a class="download-cv" href="assets/pdf/SergioCubasCV.pdf" target="_Blank" download="SergioCubasB">
+                    <svg id="Capa_1" data-name="Capa 1" width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>cv</title><path class="cls-1" d="M14,2H6A2,2,0,0,0,4,4V20a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V8Z"/><polyline class="cls-1" points="14 2 14 8 20 8"/><path d="M9.61,9.75H7.39a.75.75,0,0,1,0-1.5H9.61a.75.75,0,0,1,0,1.5Z"/><path d="M11.56,14v.2c0,.22-.08.29-.28.29h-.93c-.21,0-.3-.07-.3-.29v-.08c0-.45-.24-.64-.92-.64s-.92.19-.92.64v2.38c0,.45.24.65.92.65s.92-.2.92-.65v-.18c0-.21.09-.3.3-.3h.93c.2,0,.28.09.28.3v.3c0,1.08-.71,1.78-2.47,1.78s-2.45-.7-2.45-1.78V14c0-1.07.7-1.77,2.47-1.77S11.56,13,11.56,14Z"/><path d="M14.18,18.32c-.21,0-.24-.07-.31-.27l-1.79-5.4c-.07-.2.08-.3.28-.3h1c.22,0,.28.12.34.3l.87,2.72a8.65,8.65,0,0,1,.2,1.11,5.86,5.86,0,0,1,.24-1.1L16,12.65c.06-.18.12-.3.34-.3h.91c.22,0,.36.1.29.3l-1.9,5.4c-.07.2-.09.27-.3.27Z"/></svg>
+                    Descargar
+                  </a>
+                  </li>
             </ul> 
         </nav>
         <footer class="container-navegation__footer">
@@ -128,7 +135,7 @@
 
 <div class="container-pages">
     <div class="container-page container-page--home">
-      <div class="container-page__banner" style="background:url('assets/img/banner-secondary.svg'); background-size:cover;background-repeat:no-repeat">
+      <div class="container-page__banner" style="background:url('assets/img/banner-secondary.png'); background-size:cover;background-repeat:no-repeat">
       </div>
       <div class="container-page__featured">
         <p class="txt-primary txt-primary--greyD">Trabajos personales</p>
@@ -215,37 +222,15 @@
 
       <div class="container-page--aboutMe__skills">
         <p class="txt-primary txt-primary--yellow">Habilidades</p>
-        <div class="container-page--aboutMe__skills-group">
-          <div class="container-page--aboutMe__skills-group__skill">
-            <img src="assets/img/skills/css3.svg" alt="">
-            <p class="txt-primary txt-primary--skill">Básico</p> 
-          </div>
-          <div class="container-page--aboutMe__skills-group__skill">
-            <img src="assets/img/skills/git.svg" alt="">
-            <p class="txt-primary txt-primary--skill">Básico</p> 
-          </div>
-          <div class="container-page--aboutMe__skills-group__skill">
-            <img src="assets/img/skills/gulp.svg" alt="">
-            <p class="txt-primary txt-primary--skill">Básico</p> 
-          </div>
-          <div class="container-page--aboutMe__skills-group__skill">
-            <img src="assets/img/skills/html5.svg" alt="">
-            <p class="txt-primary txt-primary--skill">Básico</p> 
-          </div>
-          <div class="container-page--aboutMe__skills-group__skill">
-            <img src="assets/img/skills/js.svg" alt="">
-            <p class="txt-primary txt-primary--skill">Básico</p> 
-          </div>
-          <div class="container-page--aboutMe__skills-group__skill">
-            <img src="assets/img/skills/sass.svg" alt="">
-            <p class="txt-primary txt-primary--skill">Básico</p> 
-          </div>
-          <div class="container-page--aboutMe__skills-group__skill">
-            <img src="assets/img/skills/webpack.svg" alt="">
-            <p class="txt-primary txt-primary--skill">Básico</p> 
-          </div>
+        <div id="skillsD" class="container-page--aboutMe__skills-group">
+          
+
+        </div>   
         
-        </div>       
+        
+        <div id="skillsI" class="container-page--aboutMe__skills-group">
+         
+        </div>    
       </div>
     </div>
 
@@ -423,9 +408,7 @@
       noticias=snapshot.val();
       // Recorremos y los mostramos
       $.each(noticias, function(indice,valor){
-
         var respuesta='<div class="container-investigation__groupNews-news"  style="background-image: url('+valor.imagen+'); background-repeat: no-repeat; background-size: cover; background-position: center center;">';
-
           respuesta+='<div class="container-investigation__groupNews-news__details">';
             respuesta+='<p class="txt-primary txt-primary--blog">'+valor.titulo+'</p>';
             respuesta+='<p class="txt-secondary__description">'+valor.descripcion+'</p>';
@@ -438,8 +421,6 @@
   
         $(respuesta).appendTo('#blog');
       });
-
- 
 
     },function(objetoError){
         console.log('Error de lectura:'+objetoError.code);
@@ -526,6 +507,45 @@
     },function(objetoError){
         console.log('Error de lectura:'+objetoError.code);
     });
+
+    refSkillsD.on("value",function(snapshot){
+      /*$("#trabajo div.swiper-slide").remove();*/
+      skills=snapshot.val();
+      // Recorremos y los mostramos
+      $.each(skills, function(indice,valor){
+        var respuesta='<div class="container-page--aboutMe__skills-group__skill">'+
+          '<img src="'+valor.url+'" alt="">'+
+          '<p class="txt-primary txt-primary--skill">'+valor.nivel+'</p> '+
+          '</div>';
+  
+        $(respuesta).appendTo('#skillsD');
+      });
+
+    },function(objetoError){
+        console.log('Error de lectura:'+objetoError.code);
+    });
+
+
+    refSkillsI.on("value",function(snapshot){
+      /*$("#trabajo div.swiper-slide").remove();*/
+      skills=snapshot.val();
+      // Recorremos y los mostramos
+      $.each(skills, function(indice,valor){
+        var respuesta='<div class="container-page--aboutMe__skills-group__skill">'+
+          '<img src="'+valor.url+'" alt="">'+
+          '<p class="txt-primary txt-primary--skill">'+valor.nivel+'</p> '+
+          '</div>';
+  
+        $(respuesta).appendTo('#skillsI');
+      });
+
+    },function(objetoError){
+        console.log('Error de lectura:'+objetoError.code);
+    });
+
+
+
+
   });
 </script>
 <script src="assets/js/modal.js"></script>
