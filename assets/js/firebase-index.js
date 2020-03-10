@@ -98,7 +98,7 @@
     });
 
     refEmpleo.on("value",function(snapshot){
-      $("#empresa div.item").remove();
+      $("#empresa div").remove();
       empleo=snapshot.val();
       // Recorremos y los mostramos
       var anios;
