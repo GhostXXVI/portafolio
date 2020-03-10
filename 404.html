@@ -25,8 +25,49 @@
     <link rel="apple-touch-startup-image" href="assets/img/icons/noocturno.png">
     <link rel="manifest" href="./manifest.json">
     <title>404</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/library/owl2/css/owl.carousel.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/85bf147151.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+        </script>
+    <![endif]-->
 </head>
-<body>
+<body class="notFound">
+
+    <img src="assets/img/404.png" alt="404" class="cloud cloud1">
+    <img src="assets/img/404-2.png" alt="404" class="cloud cloud2">
+
+    <div class="error">
+        <h1>Oops!</h1>
+        <p class="description"> <span> Error,</span> esta <span>pagina no</span><br> se encuentra <span>disponible</span></p>
+        <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Volver al inicio</a>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <script>
+
+$.fn.parallax = function(resistance, mouse) {
+  $el = $(this);
+  TweenLite.to($el, 0.2, {
+    x: -((mouse.clientX - window.innerWidth / 2) / resistance),
+    y: -((mouse.clientY - window.innerHeight / 2) / resistance)
+  });
+};
+
+$(document).mousemove(function(e) {
+  $(".cloud1").parallax(20, e);
+  $(".cloud2").parallax(40, e);
+  });
+
+
+    </script>
     
 </body>
 </html>
