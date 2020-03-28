@@ -2,7 +2,7 @@
 //asignar un nombre y versión al cache
 const CACHE_NAME = 'Nooturno',
   urlsToCache = [
-    'index.html',
+    'https://sergiocubas.github.io/portafolio/',
     '/assets/css/main.css',
     '/assets/js/script.js',
     'assets/img/icons/noocturno.png',
