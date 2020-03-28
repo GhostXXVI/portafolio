@@ -1,7 +1,3 @@
-
-
-
-
 const body = document.querySelector("body");
 const modal = document.querySelector(".modal");
 const modalButton = document.querySelector(".modal-button");
@@ -163,19 +159,3 @@ $( document ).ready(function() {
 
     });
 });
-
-
-
-
-
-
-
-/*$container.isotope({
-    filter: '*',
-    animationOptions: {
-        duration: 750,
-        easing: 'linear',
-        queue: false
-    }
-});*/
-

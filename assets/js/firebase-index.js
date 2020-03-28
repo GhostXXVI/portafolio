@@ -97,77 +97,8 @@
         console.log('Error de lectura:'+objetoError.code);
     });
 
-    refEmpleo.on("value",function(snapshot){
-      $("#empresa div").remove();
-      empleo=snapshot.val();
-      // Recorremos y los mostramos
-      var anios;
-      $.each(empleo, function(indice,valor){
-        anio = parseInt(valor.dateF.substr(0, 4)) - parseInt(valor.dateI.substr(0, 4));
-        mes = parseInt(valor.dateF.substr(5, 7)) - parseInt(valor.dateI.substr(5, 7));
-        var respuesta='<div class="item">'+
-          '<div class="container-page--aboutMe__jobs-job">'+
-            '<div class="container-page--aboutMe__jobs-job__header">'+
-              '<div class="job_header-logo">'+
-                '<img src="'+valor.logo+'" alt="">'+
-              '</div>'+
-              '<div class="job_header-count">'+
-                '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>'+
-                '<p>3</p>'+
-              '</div>'+
-                
-            '</div>'+
-            '<div class="container-page--aboutMe__jobs-job__body">'+
-              '<p class="txt-primary txt-primary--person" style="color: '+valor.color+';">'+valor.company+'</p>'+
-              '<small>'+valor.position+'</small>'+
-              '<p class="txt-date">('+anio+'<small> Año </small> '+mes+'<small> Meses</small>)</p>'+
-              '<ul>'+
-                '<li>'+valor.description+'</li>'+
-              '</ul>'+
-            '</div>'+
-            '<div class="container-page--aboutMe__jobs-job__footer">'+
-              '<div class="container-page__workFlow-card">'+
-                  '<div class="flujo">'+
-                      '<small class="txt-primary txt-primary--red">Herramientas</small>'+
-                      '<img src="'+valor.skills+'" alt="">'+
-                  '</div>'+
-                  '<div class="efecto"></div>'+
-              '</div>'+
-            '</div>'+
-          '</div>'+
-        '</div>';
-        $(respuesta).appendTo('#empresa');
-      });
-
-      /*Carousel - Quien soy*/
-      $(document).ready(function(){
-        $('.owl-carousel').owlCarousel({
-          center: true,
-          loop:true,
-          autoWidth:true,
-          margin:30,
-          autoplay:false,
-          responsiveClass:true,
-          responsive:{
-              0:{
-                items:1,
-                loop:false,
-                autoplay:true,
-                stagePadding: 10,
-                margin:5
-              },
-              600:{
-                items:1
-              },
-              1000:{
-                items:2
-              }
-          }
-        });
-      });
-    },function(objetoError){
-        console.log('Error de lectura:'+objetoError.code);
-    });
+ 
+    
     refSkillsD.on("value",function(snapshot){
       $("#skillsD div.container-page--aboutMe__skills-group__skill").remove();
       skills=snapshot.val();
